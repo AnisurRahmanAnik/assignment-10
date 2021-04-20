@@ -20,7 +20,7 @@ const Admin = () => {
             imgUrl: imgUrl
         };
         
-        const url = `http://localhost:5000/addProduct`
+        const url = `https://hidden-caverns-93002.herokuapp.com/addProduct`
 
         console.log(eventData);
         fetch(url, {

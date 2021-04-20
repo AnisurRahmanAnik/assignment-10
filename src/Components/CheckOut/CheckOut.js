@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 import { UserContext } from '../../App';
 import Nav from '../Navbar/Nav';
 
@@ -14,7 +13,7 @@ const CheckOut = () => {
     const [product, setProduct] = useState([])
 
     useEffect(() => {
-      fetch('http://localhost:5000/products')
+      fetch('https://hidden-caverns-93002.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProduct(data))
     }, [])
@@ -32,7 +31,7 @@ const CheckOut = () => {
 
       const orderDetails = { ...loggedInUser, Shipment: OrderDetails, orderTime: new Date() }
 
-      fetch('http://localhost:5000/addOrder', {
+      fetch('https://hidden-caverns-93002.herokuapp.com/addOrder', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -61,8 +60,6 @@ const CheckOut = () => {
                         <p class="card-text">{name}</p>
                         <p class="card-text">{price}</p>
                   
-
-
                     </div>
 
 
